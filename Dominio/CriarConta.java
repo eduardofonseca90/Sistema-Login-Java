@@ -1,4 +1,4 @@
-package ExerciciosPOO.Metodos.Dominio;
+package ProjetoContaBancariaJava.Dominio;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -13,6 +13,8 @@ public class CriarConta {
     public void inserirNomeCliente() {
         System.out.println("Insira seu nome: ");
         nomeCliente = scanner.nextLine();
+        String nomeMaiusculo = nomeCliente.toUpperCase();
+        nomeCliente = nomeMaiusculo;
     }
 
     public void numeroDaConta() {

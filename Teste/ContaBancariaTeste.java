@@ -1,15 +1,23 @@
-package ExerciciosPOO.Metodos.Teste;
+package ProjetoContaBancariaJava.Teste;
 
 import java.util.Scanner;
 
-import ExerciciosPOO.Metodos.Dominio.CriarConta;
-import ExerciciosPOO.Metodos.Dominio.TelaLogin;
+import ProjetoContaBancariaJava.Dominio.CriarConta;
+import ProjetoContaBancariaJava.Dominio.DepositarDinheiro;
+import ProjetoContaBancariaJava.Dominio.Home;
+import ProjetoContaBancariaJava.Dominio.SacarDinheiro;
+import ProjetoContaBancariaJava.Dominio.TelaLogin;
+import ProjetoContaBancariaJava.Dominio.VerSaldo;
 
 public class ContaBancariaTeste {
     public static void main(String[] args) {
 
         CriarConta criarConta = new CriarConta();
         TelaLogin telaLogin = new TelaLogin();
+        VerSaldo verSaldo = new VerSaldo();
+        SacarDinheiro sacarDinheiro = new SacarDinheiro(verSaldo);
+        DepositarDinheiro depositarDinheiro = new DepositarDinheiro(verSaldo);
+        Home home = new Home(verSaldo);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -36,7 +44,8 @@ public class ContaBancariaTeste {
                             || senhaDigitada != criarConta.senha) {
                         System.out.println("Número da conta ou senha inválidos");
                     } else {
-                        System.out.println("Bem-vindo " + criarConta.nomeCliente);
+                        System.out.println("BEM-VINDO " + criarConta.nomeCliente);
+                        home.opcaoUsuario();
                     }
                 }
             }

@@ -1,4 +1,4 @@
-package ExerciciosPOO.Metodos.Dominio;
+package ProjetoContaBancariaJava.Dominio;
 
 import java.util.Scanner;
 
